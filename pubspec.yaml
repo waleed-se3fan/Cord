@@ -58,6 +58,7 @@ dependencies:
   animated_text_kit: ^4.2.2
   flutter_tts:
   translator: ^0.1.7
+  audioplayers: ^0.20.1
   #flutter_contacts: ^1.1.6
 
 dev_dependencies:

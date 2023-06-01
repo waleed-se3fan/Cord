@@ -41,6 +41,11 @@ class HomeScreen extends StatelessWidget {
                                   horizontal: 10.w, vertical: 40),
                               child: Column(
                                 children: [
+                                  Switch(
+                                      value: HomeCubit.toggle,
+                                      onChanged: (x) {
+                                        cubit.chgToggle(x);
+                                      }),
                                   CustomContainer(
                                       child: Padding(
                                     padding: EdgeInsets.symmetric(
@@ -129,15 +134,16 @@ class HomeScreen extends StatelessWidget {
                                                         ? Alignment.bottomCenter
                                                         : Alignment.topLeft,
                                                     child: AnimatedTextKit(
-                                                      displayFullTextOnTap:
-                                                          true,
+                                                      repeatForever: false,
+                                                      isRepeatingAnimation:
+                                                          false,
+                                                      totalRepeatCount: 1,
                                                       animatedTexts: [
                                                         TyperAnimatedText(HomeCubit
-                                                                .translatedText ??
-                                                            (HomeCubit.selectedLanguage ==
-                                                                    'English'
-                                                                ? 'Wait...'
-                                                                : '0000000')),
+                                                                .toggle
+                                                            ? HomeCubit.tdata
+                                                            : HomeCubit
+                                                                .translatedText),
                                                       ],
                                                     ),
                                                   );
@@ -164,9 +170,9 @@ class HomeScreen extends StatelessWidget {
                                         child: GradientButton(
                                           height: 45.h,
                                           onPressed: () async {
-                                            await cubit.tts();
                                             cubit.startRecord();
-                                            await cubit.getTextData();
+                                            await cubit.tts();
+
                                             await cubit
                                                 .translate(HomeCubit.type);
                                           },
