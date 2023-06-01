@@ -31,14 +31,13 @@ class HomeCubit extends Cubit<HomeState> {
   static String? data;
   Future<String?> getTextData() async {
     try {
-      final response = await http
-          .post(Uri.parse('https://cord0.me/api/signals/predict'), body: {
-        'signal':
-            '[-27535.449219,-25971.853516,-30141.794922,-19697.228516,3157.675537,-33066.187500,-27920.703125,-9997.800781]'
-      }, headers: {
-        "Accept": "application/json",
-        'authorization': 'Bearer $userToken'
-      });
+      final response = await http.post(
+          Uri.parse('https://cord0.me/api/signals/simulate'),
+          body: {},
+          headers: {
+            "Accept": "application/json",
+            'authorization': 'Bearer $userToken'
+          });
       data = await jsonDecode(response.body);
       return data;
     } catch (e) {
@@ -100,9 +99,12 @@ class HomeCubit extends Cubit<HomeState> {
     emit(StopRecording());
   }
 
-  static String translatedText =
-      'When I glance over my notes and records of the Sherlock Holmes cases between the years ’82 and ’90, I am faced by so many which present strange and interesting features that it is no easy matter to know which to choose and which to leave.';
+  static String translatedText = 'wait ....';
+  /*  'When I glance over my notes and records of the Sherlock Holmes cases between the years ’82 and ’90, I am faced by so many which present strange and interesting features that it is no easy matter to know which to choose and which to leave.';
+ */
+
   GoogleTranslator translator = GoogleTranslator();
+
   translate(type) async {
     try {
       await translator.translate(data!, from: 'en', to: type).then((value) {

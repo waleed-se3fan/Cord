@@ -166,6 +166,9 @@ class HomeScreen extends StatelessWidget {
                                           onPressed: () async {
                                             await cubit.tts();
                                             cubit.startRecord();
+                                            await cubit.getTextData();
+                                            await cubit
+                                                .translate(HomeCubit.type);
                                           },
                                           title: 'Start',
                                         )),
