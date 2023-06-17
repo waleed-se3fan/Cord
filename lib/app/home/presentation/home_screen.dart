@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:toggle_switch/toggle_switch.dart';
 import '../../../core/styles/colors.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -41,11 +42,34 @@ class HomeScreen extends StatelessWidget {
                                   horizontal: 10.w, vertical: 40),
                               child: Column(
                                 children: [
-                                  Switch(
-                                      value: HomeCubit.toggle,
-                                      onChanged: (x) {
-                                        cubit.chgToggle(x);
-                                      }),
+                                  ToggleSwitch(
+                                    customWidths: [
+                                      MediaQuery.of(context).size.width / 2.3,
+                                      MediaQuery.of(context).size.width / 2.3
+                                    ],
+                                    inactiveBgColor:
+                                        Color.fromRGBO(224, 224, 224, 1),
+                                    initialLabelIndex: HomeCubit.t,
+                                    totalSwitches: 2,
+                                    labels: ['Your Voice', 'Auto Voice'],
+                                    onToggle: (index) {
+                                      bool z;
+                                      index == 0 ? z = true : z = false;
+                                      print('switched to: $z');
+                                      cubit.chgtooggle(z);
+                                      index == 0
+                                          ? HomeCubit.t = 0
+                                          : HomeCubit.t = 1;
+                                    },
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  // Switch(
+                                  //     value: HomeCubit.toggle,
+                                  //     onChanged: (x) {
+                                  //       cubit.chgToggle(x);
+                                  //     }),
                                   CustomContainer(
                                       child: Padding(
                                     padding: EdgeInsets.symmetric(

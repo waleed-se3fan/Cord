@@ -19,7 +19,8 @@ class HomeCubit extends Cubit<HomeState> {
   static String tvoice =
       'https://coqui-prod-creator-app-synthesized-samples.s3.amazonaws.com/samples/fc0b3fb0-8344-428d-9775-c9a3e95febfb.wav';
 
-  chgToggle(x) {
+  static int t = 0;
+  chgtooggle(x) {
     toggle = x;
     emit(chgToggleState());
   }
@@ -57,7 +58,7 @@ class HomeCubit extends Cubit<HomeState> {
           'cloned': '1'
         }, headers: {
           "Accept": "application/json",
-          'authorization': 'Bearer 164|gQAO3y8REngouxtlSaK2iMClrKdHSoYybuZFoFhD'
+          'authorization': 'Bearer 342|NSh2wwl5OJTdrLA9DPuxQLVEZSkRL4UlaoCgOrmP'
         });
 
         var mydata = await jsonDecode(response.body);

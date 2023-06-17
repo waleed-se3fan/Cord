@@ -28,11 +28,11 @@ class PatientProileCubit extends Cubit<PatientProileState> {
 
   getData(myData) async {
     try {
-      final response = await http
-          .get(Uri.parse('https://cord0.me/api/profile/1'), headers: {
-        "Accept": "application/json",
-        'authorization': 'Bearer $userToken'
-      });
+      final response = await http.get(Uri.parse('https://cord0.me/api/profile'),
+          headers: {
+            "Accept": "application/json",
+            'authorization': 'Bearer $userToken'
+          });
       if (response.statusCode == 200) {
         var data = await jsonDecode(response.body);
         return await data['data'][myData];
