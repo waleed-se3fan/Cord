@@ -1,16 +1,28 @@
-# cord_2
+# Cord
 
 A new Flutter project.
 
-## Getting Started
+## 📖 Description  
+-Developed a cross-platform medical app using Flutter to assist speech-impaired individuals by converting brain
+signals into audible speech and text in real-time using REST APIs.
+-Implemented Cubit for managing complex app states, enhancing performance and user experience with responsive
+UI using Flutter ScreenUtil.
+-Integrated Image Picker, Audio Player, and Flutter TTS for seamless media input and natural speech output .
 
-This project is a starting point for a Flutter application.
+## 🛠️ Tech Stack  
+**Dart** – Programming language
+**Flutter** – UI framework for building cross-platform applications
+**MVVM** – Architectural pattern for organizing code efficiently
+**Dio** – HTTP client for fetching Quranic verses, Tafsir, and Azkar from APIs
+**CUBIT**  – State management solutions for better performance and scalability
+**Audio Players** – Make the application emit the patient's voice
+**flutter_tts** – Converts text into speech for accessibility and patient assistance
+**Shared Preferences** – Stores user settings for offline access
+**qr_code_scanner** – Scan the device QR code
+**image_picker** – Captures or selects images for user profiles and documents
+**flutter_image_compress** – Reduces image size to optimize performance
+**shimmer** – Displays loading animations when fetching data from APIs
 
-A few resources to get you started if this is your first Flutter project:
+## 🎬 Demo  
+[📹 Watch the demo](https://drive.google.com/file/d/1XcWrQbuHnSGn3ekgrbf04iLeE86VMmwh/view?usp=drive_link)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
