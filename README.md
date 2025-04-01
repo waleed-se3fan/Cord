@@ -10,8 +10,8 @@ UI using Flutter ScreenUtil.
 -Integrated Image Picker, Audio Player, and Flutter TTS for seamless media input and natural speech output .
 
 ## 🛠️ Tech Stack  
-**Dart** – Programming language.
-**Flutter** – UI framework for building cross-platform applications.
+-**Dart** – Programming language.
+-**Flutter** – UI framework for building cross-platform applications.
 **MVVM** – Architectural pattern for organizing code efficiently.
 **Dio** – HTTP client for fetching Quranic verses, Tafsir, and Azkar from APIs.
 **CUBIT**  – State management solutions for better performance and scalability.
